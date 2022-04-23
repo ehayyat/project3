@@ -1,0 +1,1 @@
+app_key = {"X-CMC_PRO_API_KEY": "f5edd51c-defa-48b5-9af8-60226629f498"}
