@@ -3,13 +3,14 @@ from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
 import pandas as pd
 import pymongo
+from config import app_key
 
 
 url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
 parameters = {"start": 1, "limit": 1000, "convert": "USD"}
 headers = {
     "Accept": "application/json",
-    "X-CMC_PRO_API_KEY": "f5edd51c-defa-48b5-9af8-60226629f498",
+    "X-CMC_PRO_API_KEY": app_key,
 }
 
 session = Session()
