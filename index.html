@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
           <div class="col-12">
             <nav class="navbar sticky-top navbar-light bg-light">
@@ -23,25 +23,41 @@
             <div id="lineplot"></div>
           </div>
         </div>
-        <hr>
-        <div class="row">
+        <hr> -->
+        <!-- <div class="row">
           <div class="col-6">
             Column
           </div>
           <div class="col-6">
-            Column
-          </div>
+            Column -->
+          <!-- </div>
         </div>
-      </div>
+      </div> -->
  
 
       <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
-
+<!-- 
       <ul>
         <li>Market Cap</li>
         <li>Price</li>
 
-      </ul>
+      </ul> -->
+      <table border="1px">
+        <thead>
+             <tr>
+                <th>Coin</th>
+                <th>Price</th>
+                <th>Market Cap</th>   
+             </tr>   
+        </thead>
+        <tbody>
+            <tr>
+                <td>BTC</td>
+                <td>$39,800</td>
+                <td>2 Trillion</td>
+            </tr>
+        </tbody>
+      </table>
 </body>
 
 
