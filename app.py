@@ -3,6 +3,7 @@ from flask_pymongo import PyMongo
 import json
 from bson import ObjectId
 import flask
+from flask_cors import CORS, cross_origin
 
 class JSONEncoder(json.JSONEncoder):
     def default(self, o):
@@ -11,6 +12,7 @@ class JSONEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, o)
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 
 app.config["MONGO_URI"] = "mongodb://localhost:27017/cryptoCurrency_db"
 mongo = PyMongo(app)
@@ -25,6 +27,9 @@ def index():
 def home():
     return render_template('index.html')
 
+# if you have CORS issue uncomment this and line 16 then comment 34
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
 
+# if __name__ == '__main__':
+#     app.run(debug=True, port=8000)

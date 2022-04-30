@@ -6,9 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cryptocurrency Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <style>
+    body {
+    background-color: #ff8811;
+    };
+
+    h1 {
+        color: #FFF8F0;
+    }
+
+    h5 {
+        color: #FFF8F0;
+    }
+    select option {
+
+        background-color: #FFF8F0;
+
+    }
+    .shadow {
+
+box-shadow: 8px 7px 5px 0px rgba(244,208,111,0.54);
+    }
+    
+    </style>
 
 
 </head>
@@ -17,46 +42,61 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12 jumbotron text-center">
-                <h1>Cryptocurrency Dashboard</h1>
-                <p>Use the interactive charts below to explore the dataset</p>
+            <div class="col-md-12 text-center my-4">
+                <h1></h1>
             </div>
+
         </div>
+        <br>
+        <br>
+        <br>
+        <div>
+
+            <select class="shadow" id="selDataset">
+                <option value="Bitcoin"> Bitcoin </option>
+                <option value="Ethereum"> Ethereum </option>
+                <option value="Tether"> Tether </option>
+                <option value="BNB"> BNB </option>
+                <option value="USD Coin"> USD Coin </option>
+                <option value="Solana"> Solana </option>
+                <option value="XRP"> XRP </option>
+                <option value="Terra"> Terra </option>
+                <option value="Cardano"> Cardano </option>
+                <option value="Dogecoin"> Dogecoin </option>
+            </select>
+        </div>
+        <br>
         <div class="row">
-            <div class="col-md-2">
-                <div class="well">
-                    <h5>SELECT Crypto:</h5>
-                    <select id="selDataset">
-                        <option value = "Bitcoin"> Bitcoin </option>
-                        <option value = "Ethereum"> Ethereum </option>
-                        <option value = "Tether"> Tether </option>
+            <div class="col-md-6">
+                <div class = "shadow" id="BarChart2"></div>
+            </div>
+            <div class="col-md-6">
+                <br>
+                <br>
+                <h1 style="color: #FFF8F0; font-size:75px; text-align: center;">Cryptocurrency Dashboard</h1>
+            </div>
 
-                    </select>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Cryptocurrency Pie Chart</h3>
-                    </div>
-                </div>
-                <div id="PieChart" class="panel-body"></div>
-            </div>
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Cryptocurrency Bar Chart</h3>
-                </div>
-            </div>
-            <div id="BarChart" class="panel-body"></div>
         </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Cryptocurrency Date Added Chart</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class = "shadow", id="PieChart"></div>
             </div>
+            <div class="col-md-6">
+                <div class = "shadow", id="BarChart"></div>
+            </div>
+
         </div>
-        <div id="BarChart2" class="panel-body"></div>
+        <br>
+        <br>
+        <br>
+        <br>
 
+ <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
 
-                <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
 </body>
-
 
 </html>
